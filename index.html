@@ -57,6 +57,97 @@
         </div>
     </section>
 
+    <!-- Twitter Kullanıcı Bilgisi Çekme Bölümü -->
+    <section id="twitter-user" class="twitter-section">
+        <div class="twitter-container twitter-grid">
+            <div class="twitter-user-col">
+                <h2>Twitter Kullanıcı Bilgisi Çekme</h2>
+                <form id="userForm">
+                    <label for="username">Twitter Kullanıcı Adı:</label>
+                    <input type="text" id="username" name="username" placeholder="ornek: jack" required>
+                    <button type="submit">Bilgileri Getir</button>
+                </form>
+                <div id="result"></div>
+            </div>
+            <aside id="tweetsSidePanel" class="tweets-panel">
+                <div class="tweets-panel-header">
+                    <h2 id="tweetsPanelTitle">Tweetler</h2>
+                    <button id="closeTweetsSidePanel">&times;</button>
+                </div>
+                <div id="tweetsPanelContent" class="tweets-panel-content"></div>
+            </aside>
+        </div>
+        <style>
+        .twitter-grid {
+            display: grid;
+            grid-template-columns: 1fr minmax(340px, 420px);
+            gap: 32px;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .twitter-user-col {
+            min-width: 280px;
+        }
+        .tweets-panel {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+            padding: 0 0 24px 0;
+            display: none;
+            position: relative;
+            min-width: 0;
+            max-width: 420px;
+            height: 100%;
+            overflow: hidden;
+        }
+        .tweets-panel.show {
+            display: block;
+            animation: fadeInPanel .3s cubic-bezier(.4,0,.2,1);
+        }
+        @keyframes fadeInPanel {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .tweets-panel-header {
+            padding: 24px 24px 12px 24px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .tweets-panel-header h2 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        #closeTweetsSidePanel {
+            font-size: 22px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #888;
+            transition: color 0.2s;
+        }
+        #closeTweetsSidePanel:hover {
+            color: #e74c3c;
+        }
+        .tweets-panel-content {
+            padding: 18px 24px 0 24px;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        @media (max-width: 900px) {
+            .twitter-grid {
+                grid-template-columns: 1fr;
+            }
+            .tweets-panel {
+                max-width: 100vw;
+                margin-top: 24px;
+            }
+        }
+        </style>
+    </section>
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
@@ -286,6 +377,7 @@
             e.preventDefault();
             alert('Mesajınız başarıyla gönderildi! Veri analizi projeniz hakkında en kısa sürede size dönüş yapacağız.');
         });
-    </script>
+</script>
+    <script src="script.js"></script>
 </body>
 </html>

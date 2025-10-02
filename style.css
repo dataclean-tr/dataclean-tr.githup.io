@@ -1,3 +1,51 @@
+/* Twitter Kullanıcı Bilgisi Çekme Bölümü */
+.twitter-section {
+    background: #f5f7fa;
+    padding: 40px 0;
+    margin-top: 40px;
+}
+.twitter-container {
+    max-width: 500px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(99,102,241,0.08);
+    padding: 32px 24px;
+    text-align: center;
+}
+.twitter-container h2 {
+    margin-bottom: 18px;
+    color: #6366f1;
+}
+#userForm {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+#userForm input[type="text"] {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+#userForm button {
+    padding: 10px;
+    background: #6366f1;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+#userForm button:hover {
+    background: #4f46e5;
+}
+#result {
+    margin-top: 18px;
+    min-height: 40px;
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
